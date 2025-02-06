@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti</title>
+    <link rel="stylesheet" href="final-style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>¿Do you wanna be my valentine? 💚</h2>
+        <button onclick="mostrarMensaje()">Sí</button>
+
+        <!-- Imagen decorativa -->
+        <div class="image-container">
+            <img src="Images/gato.png" alt="gato">
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            alert('¡Sabía que dirías que sí! 🌿💚');
+        }
+
+        // Generar hojas flotantes
+        function crearHojas() {
+            const leaf = document.createElement("div");
+            leaf.classList.add("leaf");
+            leaf.innerHTML = "🍃";
+            document.body.appendChild(leaf);
+
+            leaf.style.left = Math.random() * 100 + "vw";
+            leaf.style.animationDuration = Math.random() * 4 + 3 + "s";
+
+            setTimeout(() => {
+                leaf.remove();
+            }, 6000);
+        }
+
+        setInterval(crearHojas, 700);
+    </script>
+</body>
+</html>
